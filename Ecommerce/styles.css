@@ -12,6 +12,10 @@ body {
   background-color: #ffffff;
 }
 
+.main-section {
+  width: 100%;
+}
+
 .navbar {
   display: flex;
   color: white;
@@ -19,6 +23,10 @@ body {
   align-items: center;
   background-color: black;
   padding: 15px 20px;
+}
+
+.company h2 {
+  font-size: 22px;
 }
 
 .products ul {
@@ -30,6 +38,7 @@ body {
   display: inline-flex;
   list-style: none;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .banner-section {
@@ -44,81 +53,76 @@ body {
   display: block;
 }
 
-.category-section {
+.categeory-section {
   border: 2px solid black;
   padding: 15px;
   margin: 20px 0;
 }
 
-.category-section ul {
+.categeory-section h2 {
+  margin-bottom: 15px;
+}
+
+.categeory-section ul {
   display: flex;
   list-style: none;
   gap: 10px;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
-.category-section li {
-  width: 12.5%;
+.categeory-section li {
+  width: 12%;
   border: 1px solid black;
   padding: 5px;
   box-sizing: border-box;
+  text-align: center;
 }
 
-.category-section img {
+.categeory-section li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+.categeory-section img {
   width: 100%;
   height: 120px;
   object-fit: cover;
   display: block;
+  margin-bottom: 5px;
 }
 
-.category-section li:hover {
+.categeory-section li span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.categeory-section li:hover {
   transform: scale(1.08);
+  transition: 0.3s;
+}
+
+.main-section > div:nth-of-type(4) {
+  padding: 0 20px;
+}
+
+.main-section > div:nth-of-type(4) h2 {
+  margin-bottom: 15px;
 }
 
 .arrival-section {
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   width: 100%;
-}
-
-.arrival-section h2 {
-  margin-bottom: 20px;
-}
-
-.arrival-section ul {
-  display: grid;
-  list-style: none;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  padding: 0;
-  margin: 0;
-}
-
-.arrival-section ul li {
-  height: 250px;
-  border: 1px solid black;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.arrival-section ul li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border: 2px solid red;
-}
-
-.arrival-section ul li:hover img {
-  transform: scale(1.05);
 }
 
 .sub-section ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 15px;
   list-style: none;
-  padding: 15px;
+  padding: 0;
   margin: 0;
 }
 
@@ -171,7 +175,7 @@ body {
 
 .discount-section img {
   width: 100%;
-  height: 220px;
+  height: 180px;
   object-fit: contain;
   padding: 5px;
   background: white;
@@ -182,7 +186,7 @@ body {
 .footer {
   position: relative;
   width: 100%;
-  height: auto;
+  margin-top: 20px;
 }
 
 .footer img {
@@ -192,168 +196,63 @@ body {
   display: block;
 }
 
-.product-details {
-  display: flex;
-  background: white;
-  margin: 20px auto;
-  padding: 30px;
-  gap: 50px;
-  max-width: 1200px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.pro-left {
-  width: 50%;
-  padding: 40px;
-}
-
-.pro-left img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.pro-right {
-  width: 50%;
-  padding: 50px;
-}
-
-.pro-right h2 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #212121;
-}
-
-.pro-right p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 12px;
-  color: #212121;
-}
-
-.pro-right h3 {
-  font-size: 22px;
-  margin: 18px 0 10px 0;
-  font-weight: 600;
-}
-
-.pro-right ul {
-  margin-left: 20px;
-  margin-bottom: 25px;
-}
-
-.pro-right ul li {
-  font-size: 16px;
-  line-height: 2;
-  margin-bottom: 10px;
-  color: #212121;
-}
-
-.pro-button {
-  margin-top: 30px;
-  display: flex;
-  gap: 20px;
-}
-
-.addBtn, .buyBtn {
-  width: 10rem;
-  height: 3rem;
-  margin: 10px 0;
-  padding: 0 25px;
-  border: none;
-  border-radius: 2px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-.addBtn {
-  background-color: rgb(206, 217, 91);
-  color: #2e4040;
-}
-
-.buyBtn {
-  background-color: #e2a441;
-  color: rgb(93, 121, 221);
-}
-
-.addBtn:hover {
-  background-color: #f5f5a0;
-}
-
-.buyBtn:hover {
-  background-color: #499cd7;
-  color: white;
-}
-
-/* MOBILE RESPONSIVE FIX */
+/* MOBILE RESPONSIVE */
 @media only screen and (max-width: 600px) {
   
-  /* Navbar stack cheddam */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .company h2 {
+    font-size: 18px;
+  }
+  
+  .products {
+    width: 100%;
   }
   
   .products ul {
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
     width: 100%;
   }
   
   .products ul li {
-    display: block;
     margin-right: 0;
-    margin-bottom: 8px;
-    width: 100%;
-    text-align: center;
-    padding: 8px;
+    padding: 6px 12px;
     background: #333;
     border-radius: 4px;
+    font-size: 14px;
   }
 
-  /* Category 8 items to 2 per row */
-  .category-section ul {
-    flex-wrap: wrap;
+  .categeory-section ul {
     gap: 8px;
   }
   
-  .category-section li {
+  .categeory-section li {
     width: 48%;
   }
   
-  .category-section img {
+  .categeory-section img {
     height: 100px;
   }
 
-  /* Arrivals 4 columns to 2 columns */
-  .arrival-section ul {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-  .arrival-section ul li {
-    height: 200px;
-  }
-  
-  .arrival-section ul li img {
-    height: 130px;
-  }
-
-  /* Sub section 4 to 2 columns */
   .sub-section ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    padding: 10px;
   }
   
   .sub-section li img {
     height: 120px;
   }
+  
+  .sub-section li span {
+    font-size: 13px;
+  }
 
-  /* Discount 6 columns to 2 columns */
   .discount-section {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -361,40 +260,7 @@ body {
   }
 
   .discount-section img {
-    height: 150px;
-  }
-
-  /* Product details page */
-  .product-details {
-    flex-direction: column;
-    padding: 15px;
-    gap: 20px;
-    margin: 10px;
-  }
-
-  .pro-left, .pro-right {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .pro-right h2 {
-    font-size: 22px;
-  }
-
-  .pro-button {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .addBtn, .buyBtn {
-    width: 100%;
-    height: 3rem;
-  }
-
-  /* All banners full width */
-  .banner-section img, .banner-2 img {
-    width: 100%;
-    height: auto;
+    height: 140px;
   }
 }
   
